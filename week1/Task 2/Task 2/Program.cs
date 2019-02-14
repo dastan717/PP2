@@ -17,12 +17,10 @@ namespace lab1_ex2
             id = i;
         }
 
-        public int Year { get => year; set => year = value; }
-
         public void PrintInfo() //создаем функцию войд
         {
-            Year++;//+1
-            Console.WriteLine(name + " " + id + " " + Year);
+            year++;//+1
+            Console.WriteLine(name + " " + id + " " + year);
         }
 
         class Program
@@ -35,6 +33,7 @@ namespace lab1_ex2
                 s.PrintInfo(); //вызываем функцию воид
                 s1.PrintInfo();
                 s2.PrintInfo();
+                Console.ReadKey();
             }
         
         }

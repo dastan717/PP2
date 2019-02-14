@@ -26,7 +26,7 @@ namespace ConsoleApp1
                 {
                     if (a[i] % j == 0)
                     {
-                        isNotPrime = true;   // если поделилось на что то то это НЕ прайм
+                        isNotPrime = true;   // если поделилось на что то,  то это НЕ прайм
                         break;
                     }
                 }
