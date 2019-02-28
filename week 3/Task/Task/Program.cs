@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,12 +33,12 @@ namespace Task1
             }
             else if (f.GetType() == typeof(DirectoryInfo)) // Условие, которое рисует консоль и имя, если это папка
             {
-                Console.BackgroundColor = ConsoleColor.White;
+                Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.Blue;
             }
             else// В противном случае, если это файл
             {
-                Console.BackgroundColor = ConsoleColor.White;
+                Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.Magenta;
             }
         }
@@ -46,53 +46,53 @@ namespace Task1
         {
 
             dir = new DirectoryInfo(path); // присвоить значение к Dir
-            FileSystemInfo[] FSI = dir.GetFileSystemInfos(); // Get all the Info about files and write into array
-            Console.BackgroundColor = ConsoleColor.White; // Paint the Console intp White color every time
+            FileSystemInfo[] FSI = dir.GetFileSystemInfos(); // Получить всю информацию о файлах и записать в массив
+            Console.BackgroundColor = ConsoleColor.Black; // Раскрасить консоль в белый цвет каждый раз
             Console.Clear();
-            for (int k = 0, j = 0; k < FSI.Length; k++) // Cycle for showing everything
+            for (int k = 0, j = 0; k < FSI.Length; k++) // цикл для показа всего
             {
                 if (FSI[k].Name[0] == '.') // если начало равна . то пропустить
                     continue;
-                Color(FSI[k], j); // Call the function to Paint all interface
-                Console.WriteLine(j + 1 + ". " + FSI[k].Name); // Show the index of the File and its name
+                Color(FSI[k], j); // вызвать функцию 
+                Console.WriteLine(j + 1 + ". " + FSI[k].Name); // Показать индекс файла и его имя
                 j++;
             }
 
         }
-        public void CalSize() // Method fo calculating size of the array without Hidden files
+        public void CalSize() //Метод расчета размера массива без скрытых файлов
         {
-            DirectoryInfo d = new DirectoryInfo(path); // Create the Direcotory With and send the path
-            FileSystemInfo[] fi = d.GetFileSystemInfos(); // Create The array and Write the array of all the files from Directory
-            size = fi.Length; // size = The number of all elements into array
-            for (int k = 0; k < fi.Length; k++) // Cycle for recalculating the size of the array 
+            DirectoryInfo d = new DirectoryInfo(path); // приравниваем
+            FileSystemInfo[] fi = d.GetFileSystemInfos(); //Создать массив и записать массив всех файлов из каталога
+            size = fi.Length; // размер = количество всех элементов в массиве
+            for (int k = 0; k < fi.Length; k++) // Цикл для пересчета размера массива
             {
                 if (fi[k].Name[0] == '.') // если равна к точке ,то size -1
                     size--;
             }
         }
-        public void Down() // The method for go down
+        public void Down() // метод вниз
         {
             cursor++;
-            if (cursor == size) // if the Cursor is equal the last element of the array after Click go to the beginning
+            if (cursor == size) //если курсор равен последнему элементу массива после клика, то перейти в начало
                 cursor = 0;
         }
         public void Up()
         {
             cursor--;
-            if (cursor < 0) // If the cursor is equal less then 0-th we go the end of the array
+            if (cursor < 0) // Если курсор равен меньше 0, мы идем в конец массива
                 cursor = size - 1;
         }
-        public void Start() //The main function
+        public void Start() // Основная фунцкия
         {
 
             ConsoleKeyInfo Cons;
-            bool Ok = true; // Bool function Ok to use for going out
-            while (Ok == true) //Cycle works until Ok is true
+            bool Ok = true; // bool фунцкия Ок чтобы использовать для входа 
+            while (Ok == true) //цикл работает до тех пор пока, Ок не станет Тру
             {
-                CalSize(); // Calculate the size of the array without Hidden files
-                Show(); // Show all the Elements into array using method Show
-                Cons = Console.ReadKey(); //Click the buttom to do something
-                if (Cons.Key == ConsoleKey.DownArrow) // if the buttom is DownArrow call the method DOwn
+                CalSize(); //Рассчитать размер массива без скрытых файлов
+                Show(); // Показать все элементы в массив, используя метод Show
+                Cons = Console.ReadKey(); //нажмите на кнопку чтобы сделать что то
+                if (Cons.Key == ConsoleKey.DownArrow) // если кнопка равна downArrow , вызывается Down
                 {
                     Down();
                 }

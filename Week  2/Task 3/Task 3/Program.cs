@@ -22,22 +22,17 @@ namespace Task_3
             FileSystemInfo[] x = dir.GetFileSystemInfos();
             //Возвращает массив строго типизированных объектов FileSystemInfo, представляющих все файлы и подкаталоги в том или ином каталоге.
             //узнаем инфуо папке т.е. внутри папки заходим в папку и получаем инфу что внутри нее
-            for(int i=0;i<x.Length;i++)
-            {
-                if (x[i].GetType() == typeof(DirectoryInfo))//typeof Чтобы управлять типом и получать всю информацию о нем
-                {
-                    DirectoryInfo dir2 = x[i] as DirectoryInfo;
-                    //находит файл , узнает инфо и записывает в dir2 , и сново вызывает функцию отправляя вместе с ней 
-                    // определенное число (интеджер) , рекурсивно будет поворяться пока внутри одной папки не будет папок и файлов которые нужно показать
+           for(int i=0;i<x.Length;j++){
+                if(x[i](GetType()==typeof(DirectoryInfo)))
 
-                    kaz(dir2, j + 5);
-                }
-                else
-                {
-                    Console.ForegroundColor = ConsoleColor.White;//если внутри папки нет никаких папок , то этот  файл перекрашиваем в белый и выводим в консоль
-                    Console.WriteLine(s + x[i]);
-                }
-            }
+           console.Write (x+5);
+  
+
+
+
+
+
+}
            Console.ReadKey();
         }
  

@@ -51,16 +51,8 @@ namespace Task_2
             sr.Close();//чтобы закрыть
             fs.Close();
 
-            FileStream fs2 = new FileStream(@"C:\Users\EVRIKA.Lenovo-PC.003\Desktop\pp2\week2\Task 2\Task 2\Output.txt", FileMode.Create, FileAccess.Write);
-            //FileStream для чтения и записи
-            StreamWriter sw = new StreamWriter(fs2);//StreamWriter - чтобы что то записать, и указываем путь
-            foreach(var x in res )
-            {
-                sw.Write(x + " ");//записываем в файл
-                Console.Write(x + " ");//выводим в консоли
-            }
-            sw.Close();//закрываем
-            fs2.Close();
+            FileSystem.fs2=FyleSystem(@"C:\Users\EVRIKA.Lenovo-PC.003\Desktop\pp2\week2\Task 2\Task 2\Write.txt");
+            StreamWriter=
         }
     }
 }
